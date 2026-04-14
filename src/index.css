@@ -1,0 +1,11 @@
+@import "tailwindcss";
+/* Hide ONLY horizontal scrollbars */
+.no-scrollbar {
+  overflow-x: auto;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar:horizontal {
+  display: none;               /* Chrome, Safari */
+}
