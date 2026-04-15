@@ -21,8 +21,8 @@ function App() {
         <Route path="/onboarding" element={<OnboardingFlow />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPasswordFlow />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/creative-studio" element={<CreativeStudio />} />
+        <Route path="/creative-studio" element={<ProfilePage />} />
+        <Route path="/profile" element={<CreativeStudio />} />
         <Route path="/settings" element={<SettingsRoute />} />
         <Route path="/feed" element={<FeedPage />} />
       </Routes>

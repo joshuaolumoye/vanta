@@ -1,5 +1,6 @@
 import React from "react";
 import { ShoppingCart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   return (
@@ -39,12 +40,17 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-3 text-base font-semibold text-white bg-[#9333EA] rounded-full hover:from-purple-500 hover:to-pink-500 transition shadow-lg shadow-purple-500/50">
+          <Link
+            to="/feed"
+            className="inline-block px-8 py-3 text-base font-semibold text-white bg-[#9333EA] rounded-full hover:from-purple-500 hover:to-pink-500 transition shadow-lg shadow-purple-500/50"
+          >
             Start Reading
-          </button>
-          <button className="px-8 py-3 text-base font-bold  text-black bg-white border-white/20 rounded-full hover:bg-white/20 transition">
+          </Link>
+          <Link 
+            to="/onboarding"
+            className="px-8 py-3 text-base font-bold  text-black bg-white border-white/20 rounded-full hover:bg-white/20 transition">
             Become a Creator
-          </button>
+          </Link>
         </div>
       </div>
     </section>

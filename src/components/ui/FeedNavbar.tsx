@@ -4,13 +4,13 @@ import MessagesModal from "../../components/MessagesModal";
 import NotificationsModal from "../../components/NotificationsModal";
 
 const navLinks = [
-  { label: "Discover" },
-  { label: "Creators' Hub" },
-  { label: "Vanta Wars" },
-  { label: "Marketplace" },
-  { label: "Kickstart Projects" },
-  { label: "Contest" },
-  { label: "Community" },
+  { label: "Discover", link: "feed" },
+  { label: "Creators' Hub", link: "profile" },
+  { label: "Vanta Wars", link: "feed" },
+  { label: "Marketplace", link: "feed" },
+  { label: "Kickstart Projects", link: "feed" },
+  { label: "Contest", link: "feed" },
+  { label: "Community", link: "feed" },
 ];
 
 const Navbar: React.FC = () => {
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href="#"
+                href={link.link}
                 className="px-3 py-1.5 text-gray-300 hover:text-white text-xs font-medium whitespace-nowrap transition-colors duration-150 hover:bg-white/5 rounded-md"
               >
                 {link.label}
@@ -53,23 +53,7 @@ const Navbar: React.FC = () => {
           {/* LEFT: Message + Notification + Level */}
           <div className="flex items-center gap-2">
             
-            {/* Message */}
-            <button
-              onClick={() => setMsgOpen(true)}
-              className="relative p-1.5 text-gray-400 hover:text-white transition"
-            >
-              <MessageCircle size={16} />
-              <span className="absolute top-0.5 right-0.5 w-2 h-2 bg-pink-500 rounded-full border border-[#0d0d1a]" />
-            </button>
-
-            {/* Notification */}
-            <button
-              onClick={() => setNotifOpen(true)}
-              className="relative p-1.5 text-gray-400 hover:text-white transition"
-            >
-              <Bell size={16} />
-              <span className="absolute top-0.5 right-0.5 w-2 h-2 bg-orange-500 rounded-full border border-[#0d0d1a]" />
-            </button>
+             
 
             <div className="w-px h-4 bg-white/10 mx-1" />
 

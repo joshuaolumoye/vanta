@@ -1,8 +1,8 @@
 import React from "react";
 
 const navLinks = [
-  { label: "Discover", anchor: "/discover" },
-  { label: "Creators' Hub", anchor: "/creator-hub" },
+  { label: "Discover", anchor: "/feed" },
+  { label: "Creators' Hub", anchor: "/profile" },
   { label: "Vanta Wars", anchor: "" },
   { label: "Marketplace", anchor: "" },
   { label: "Kickstart Projects", anchor: "" },
