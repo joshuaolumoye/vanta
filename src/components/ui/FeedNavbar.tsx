@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, Bell, MessageCircle } from "lucide-react";
+import { Search } from "lucide-react";
 import MessagesModal from "../../components/MessagesModal";
 import NotificationsModal from "../../components/NotificationsModal";
 
