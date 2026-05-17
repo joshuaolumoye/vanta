@@ -12,15 +12,11 @@ const JoinCreatorsCommunity: React.FC = () => {
             </h3>
 
             <p className="text-sm text-slate-300 mb-4 sm:mb-6 leading-relaxed">
-              Connect with artists, storytellers, and dreamers from every realm
-              of the Originverse. Collaborate, share your vision, and grow with
-              a community that celebrates imagination without limits.
+              Find artists, writers, and world builders who are deep in the same process as you. Share your work, get real eyes on it, and collaborate with people who understand what you're actually building — not just what it looks like on the surface.
             </p>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              At VantaOrigin, creation isn't a solo journey — it's a shared
-              evolution. Whether you're crafting stories, building worlds, or
-              shaping ideas together, this is where your story finds its origin.
+              Building a world alone is slow. Building it with the right people changes everything. This is the space where your ideas get challenged, expanded, and seen by the people most likely to help them grow.
             </p>
           </div>
 

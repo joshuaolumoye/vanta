@@ -43,9 +43,22 @@ const HeroSection: React.FC = () => {
           </Link> */}
           <Link
             to="/onboarding"
-            className="w-full sm:w-auto px-8 py-3 text-base font-bold text-black bg-white border-white/20 rounded-full hover:bg-white/90 transition text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold text-black bg-white border-white/20 rounded-full hover:bg-white/90 transition text-center"
           >
             Start Building and exploring worlds
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
           </Link>
         </div>
       </div>

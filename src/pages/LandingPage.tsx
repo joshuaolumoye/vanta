@@ -8,6 +8,7 @@ import LegendCallout from "../components/landingScreen/LegendCallout";
 import OriginVerse from "../components/landingScreen/OriginVerse";
 import VantaPassCard from "../components/landingScreen/VantaPassCard";
 import SeasonProgressCard from "../components/landingScreen/SeasonProgressCard";
+import LeaderboardSection from "../components/landingScreen/LeaderboardSection";
 import VantaFoundrySection from "../components/landingScreen/VantaFoundrySection";
 import ExploreCreationSection from "../components/landingScreen/ExploreCreationSection";
 import StoryNeverEndsSection from "../components/landingScreen/StoryNeverEndsSection";
@@ -21,17 +22,18 @@ function App() {
       <RegionHeader />
       <Navbar />
       <HeroSection />
-      <ChooseRealmSection/>
-      <DiscoverStoriesSection/>
-      <LegendCallout/>
-      <OriginVerse/>
-      <VantaPassCard/>
-      <SeasonProgressCard/>
-      <VantaFoundrySection/>
-      <ExploreCreationSection/>
-      <StoryNeverEndsSection/>
-      <JoinCreatorsCommunity/>
-      <Footer/>
+      <ChooseRealmSection />
+      <DiscoverStoriesSection />
+      <LegendCallout />
+      <OriginVerse />
+      <VantaPassCard />
+      <SeasonProgressCard />
+      <LeaderboardSection />
+      <VantaFoundrySection />
+      <ExploreCreationSection />
+      <StoryNeverEndsSection />
+      <JoinCreatorsCommunity />
+      <Footer />
     </>
   );
 }

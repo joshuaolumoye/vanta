@@ -11,111 +11,105 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({ onSignUp, onBack }) => {
 
   return (
     <div className="min-h-screen bg-[#111827] flex flex-col lg:flex-row">
-      {/* Top/Left Side - Full Background Image with Dark Fade */}
-      <div className="h-32 lg:h-auto lg:w-[40%] relative overflow-hidden">
-        {/* Background Image */}
-        <div 
+      {/* Left Side — full bleed image, no gap/border */}
+      <div className="h-48 lg:h-auto lg:w-[45%] relative overflow-hidden flex-shrink-0">
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url("vanta-hero.png")`,
-          }}
-        >
-          {/* Pattern overlay */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
-          
-          {/* Glowing effects */}
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-500 rounded-full blur-3xl opacity-20"></div>
-          
-          {/* Decorative geometric shapes */}
-          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-white/20 rounded-2xl rotate-12"></div>
-          <div className="absolute bottom-32 right-16 w-24 h-24 border-2 border-white/20 rounded-full"></div>
-        </div>
-        
-        {/* Dark gradient fade - bottom on mobile, right on desktop */}
-        <div 
-          className="absolute inset-x-0 bottom-0 h-16 lg:inset-y-0 lg:right-0 lg:left-auto lg:w-32 lg:h-auto pointer-events-none"
-          style={{
-            background: 'linear-gradient(to top, #111827, transparent)',
-          }}
-        ></div>
-        <div 
-          className="hidden lg:block absolute inset-y-0 right-0 w-32 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to right, transparent, #111827)'
-          }}
-        ></div>
+          style={{ backgroundImage: `url("vanta-hero.png")` }}
+        />
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-3xl opacity-30 pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-500 rounded-full blur-3xl opacity-20 pointer-events-none" />
+
+        {/* Mobile: fade bottom. Desktop: fade right — seamless into bg-[#111827] */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-24 lg:hidden pointer-events-none"
+          style={{ background: 'linear-gradient(to top, #111827, transparent)' }}
+        />
+        <div
+          className="hidden lg:block absolute inset-y-0 right-0 w-40 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, transparent, #111827)' }}
+        />
       </div>
 
-      {/* Right/Bottom Side - Form */}
-      <div className="flex-1 p-6 lg:p-16 flex items-center justify-center bg-[#111827]">
-        <div className="w-full max-w-md space-y-8">
-          <div>
-            <button
-              onClick={onBack}
-              className="text-purple-300 text-sm flex items-center gap-2 hover:text-purple-200 transition mb-8"
-            >
-              <ArrowLeft size={16} /> Back home
-            </button>
+      {/* Right Side — form, vertically + horizontally centered */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-10 lg:py-16 bg-[#111827]">
+        <div className="w-full max-w-md">
+          {/* Back link */}
+          <button
+            onClick={onBack}
+            className="text-slate-400 text-sm flex items-center gap-2 hover:text-white transition mb-10"
+          >
+            <ArrowLeft size={15} /> Back home
+          </button>
 
-            <h2 className="text-4xl font-bold text-white mb-3">
+          {/* Title — centered */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
               Start Creating with VantaOrigin
             </h2>
-            <p className="text-slate-300">
-              Build your profile, publish your stories, and gain access to the tools and community that bring your creativity to life.
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Build your profile, publish your stories, and gain access to the tools
+              and community that bring your creativity to life.
             </p>
           </div>
 
-          <div className="space-y-4">
+          {/* Fields */}
+          <div className="space-y-3">
             <input
               type="text"
               placeholder="Username"
-              className="w-full px-4 py-3 rounded-lg bg-[#252F46] border border-[#7FAEF8] text-white placeholder-slate-400 focus:outline-none focus:border-purple-400 transition"
+              className="w-full px-5 py-3.5 rounded-lg bg-[#1e2a3a] border border-[#3a5070] text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 transition text-sm"
             />
 
             <input
               type="email"
               placeholder="Email/Phone number"
-              className="w-full px-4 py-3 rounded-lg bg-[#252F46] border border-[#7FAEF8] text-white placeholder-slate-400 focus:outline-none focus:border-purple-400 transition"
+              className="w-full px-5 py-3.5 rounded-lg bg-[#1e2a3a] border border-[#3a5070] text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 transition text-sm"
             />
 
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
-                className="w-full px-4 py-3 rounded-lg bg-[#252F46] border border-[#7FAEF8] text-white placeholder-slate-400 focus:outline-none focus:border-purple-400 transition pr-12"
+                className="w-full px-5 py-3.5 rounded-lg bg-[#1e2a3a] border border-[#3a5070] text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 transition text-sm pr-12"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-300"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition"
               >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
 
-            <label className="flex items-start gap-3 text-sm text-slate-300 cursor-pointer">
-              <input type="checkbox" className="mt-1 w-4 h-4 rounded border-[#7FAEF8] bg-[#252F46]" />
-              <span>I am 13+ and agree to the <a href="#" className="text-purple-400 hover:underline">privacy policies</a></span>
+            <label className="flex items-start gap-3 text-sm text-slate-400 cursor-pointer px-1 pt-1">
+              <input
+                type="checkbox"
+                className="mt-0.5 w-4 h-4 rounded-lg border-slate-600 bg-[#1e2a3a] accent-purple-500"
+              />
+              <span>
+                I am 13+ and agree to the{' '}
+                <a href="#" className="text-purple-400 hover:underline">
+                  creator code.
+                </a>
+              </span>
             </label>
 
             <button
               onClick={onSignUp}
-              className="w-full py-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50"
+              className="w-full py-3.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold transition-all transform hover:scale-[1.02] shadow-lg shadow-purple-500/30 text-sm"
             >
               Sign up
             </button>
 
-            <div className="flex items-center gap-4 pt-2">
-              <div className="flex-1 h-px bg-slate-600"></div>
-              <span className="text-slate-400 text-sm">OR</span>
-              <div className="flex-1 h-px bg-slate-600"></div>
+            {/* Divider */}
+            <div className="flex items-center gap-4 py-1">
+              <div className="flex-1 h-px bg-slate-700" />
+              <span className="text-slate-500 text-xs tracking-widest">OR</span>
+              <div className="flex-1 h-px bg-slate-700" />
             </div>
 
-            <button className="w-full flex items-center justify-center gap-3 py-3 rounded-full bg-white hover:bg-gray-100 text-gray-800 font-medium transition">
+            <button className="w-full flex items-center justify-center gap-3 py-3.5 rounded-full bg-white hover:bg-gray-100 text-gray-900 font-semibold transition text-sm">
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -125,7 +119,7 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({ onSignUp, onBack }) => {
               Sign up with Google
             </button>
 
-            <button className="w-full flex items-center justify-center gap-3 py-3 rounded-full bg-black hover:bg-gray-900 text-white font-medium transition border border-white/20">
+            <button className="w-full flex items-center justify-center gap-3 py-3.5 rounded-full bg-white hover:bg-gray-100 text-gray-900 font-semibold transition text-sm">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
               </svg>
@@ -133,7 +127,7 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({ onSignUp, onBack }) => {
             </button>
           </div>
 
-          <p className="text-xs text-slate-400 text-center">
+          <p className="text-xs text-slate-500 text-center mt-6">
             By joining you agree to the{' '}
             <a href="#" className="text-purple-400 hover:underline">
               codes

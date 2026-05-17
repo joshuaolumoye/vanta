@@ -1,72 +1,126 @@
 import React from "react";
 
+const checkItems = [
+  "Exclusive OC slots and customization",
+  "Premium comic publishing tools",
+  "Seasonal badges and achievements",
+];
+
+/* Checkmark SVG — matches the thin ✓ style in the Figma */
+const Check = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    className="flex-shrink-0 mt-0.5"
+  >
+    <path
+      d="M3 8.5L6.5 12L13 5"
+      stroke="white"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const VantaPassCard: React.FC = () => {
   const bgImage = "/vanta-hero.png";
 
   return (
     <section className="relative w-full bg-[#111827] py-14 sm:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* header */}
-        <div className="text-center mb-8 sm:mb-10">
-          <p className="text-xs text-emerald-400 mb-2 flex items-center justify-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            VantaOrigin multiverse
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            Rise Among the Legends
-          </h2>
-          <p className="max-w-xl mx-auto text-sm text-slate-400 leading-relaxed">
-            Join the ranks of visionaries shaping the VantaOrigin multiverse.
-            Share your art, build your following, and let your stories echo
-            across realms.
-          </p>
-        </div>
 
-        {/* main card */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
-          {/* background image */}
+        {/* ── Cinematic card ── */}
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/60 border border-white/10">
+
+          {/* 1. Full-bleed background image */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${bgImage})` }}
           />
 
-          {/* overlay – stronger on mobile so text stays readable */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 to-slate-950/80 sm:bg-gradient-to-r sm:from-slate-950/90 sm:via-slate-950/70 sm:to-transparent" />
+          {/* 2. Dark gradient overlay
+               - Mobile:  top-to-bottom heavy (character still peeks through at bottom)
+               - Desktop: left-to-right — solid left → transparent right so character shines */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: [
+                /* mobile fallback — rendered when sm gradient not supported */
+                "linear-gradient(180deg, rgba(10,8,20,0.88) 0%, rgba(10,8,20,0.75) 60%, rgba(10,8,20,0.30) 100%)",
+              ].join(","),
+            }}
+          />
+          {/* desktop override via a second absolutely-positioned layer */}
+          <div
+            className="absolute inset-0 hidden sm:block"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(10,8,20,0.92) 0%, rgba(10,8,20,0.80) 38%, rgba(10,8,20,0.40) 62%, rgba(10,8,20,0.00) 100%)",
+            }}
+          />
 
-          {/* content */}
-          <div className="relative z-10 p-6 sm:p-8 md:p-10 max-w-lg">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3">
+          {/* 3. Content — sits above both overlay layers */}
+          <div className="relative z-10 px-7 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14 max-w-[520px]">
+
+            {/* Title */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               VantaPass Season 3
-            </h3>
+            </h2>
 
-            <p className="text-sm text-slate-300 mb-5 sm:mb-6 leading-relaxed">
-              Join the Realm Wars and unlock exclusive rewards, characters and
-              story elements. Battle for supremacy across the mythic realms.
+            {/* Description */}
+            <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-7 sm:mb-8 max-w-md">
+              Earn always free rewards from the community and sometimes the
+              platform by participating in events and games with other creators,
+              share your art, build your fanbase, and let your creative mind
+              echo across realms worldwide
             </p>
 
-            <ul className="space-y-2.5 sm:space-y-3 text-sm text-slate-300 mb-7 sm:mb-8">
-              <li className="flex items-center gap-2">
-                <span className="text-emerald-400">✓</span>
-                Exclusive OG slots and customizations
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-emerald-400">✓</span>
-                Premium comic publishing tools
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-emerald-400">✓</span>
-                Seasonal badges and achievements
-              </li>
+            {/* Checklist */}
+            <ul className="space-y-3 sm:space-y-4 mb-9 sm:mb-10">
+              {checkItems.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm sm:text-base text-white">
+                  <Check />
+                  <span className="font-semibold">{item}</span>
+                </li>
+              ))}
             </ul>
 
-            <button className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 transition text-sm font-medium text-white shadow-lg shadow-purple-500/20">
-              Unlock VantaPass
+            {/* CTA button — warm gradient pill matching Figma */}
+            <button
+              className="
+                inline-flex items-center justify-center
+                px-7 py-3
+                rounded-full
+                text-sm sm:text-base font-semibold text-white
+                transition-all duration-200
+                active:scale-95
+                shadow-lg shadow-black/30
+              "
+              style={{
+                background:
+                  "linear-gradient(90deg, #9CA3AF 0%, #F97316 100%)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background =
+                  "linear-gradient(90deg, #6B7280 0%, #EA6B00 100%)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background =
+                  "linear-gradient(90deg, #9CA3AF 0%, #F97316 100%)";
+              }}
+            >
+              Access VantaPass
             </button>
           </div>
 
-          {/* bottom spacer so card has enough height on mobile */}
-          <div className="h-40 sm:h-52 md:h-64 lg:h-72" />
+          {/* 4. Invisible height prop so card fills out on mobile
+               (content height drives it on desktop naturally) */}
+          <div className="sm:hidden h-48" aria-hidden="true" />
         </div>
+
       </div>
     </section>
   );
