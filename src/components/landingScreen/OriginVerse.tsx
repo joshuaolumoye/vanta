@@ -89,7 +89,7 @@ const OriginVerse: React.FC = () => {
     <section className="relative w-full bg-[#111827] py-24">
       <div className="max-w-7xl mx-auto px-6 mb-14 text-center">
         <h2 className="text-3xl text-start font-bold text-white mb-4">
-          The Originverse Awaits — Built by <br /> Creators, Ruled by Imagination.
+          Your universe await, fueled by imagination, <br /> Built by you!!! 
         </h2>
         <p className="max-w-2xl text-start text-white text-sm">
           Step beyond the pages and into a living universe shaped by its storytellers.From epic comics to character chronicles, every creation adds a new chapter to the expanding VantaOrigin realm.Connect, collaborate, and rise among legends — your journey begins here.

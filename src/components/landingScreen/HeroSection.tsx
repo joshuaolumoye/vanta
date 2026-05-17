@@ -4,52 +4,48 @@ import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-4">
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+    <section className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6">
+      <div className="relative z-10 text-center max-w-4xl mx-auto w-full">
         {/* Announcement Bar */}
-        <div className="inline-flex items-center justify-between gap-3 bg-[#5F6F8C] rounded-xl mb-6 text-white text-xs sm:text-sm">
-          {/* Left: Icon + Text */}
-          <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#9333EA]">
-              <ShoppingCart size={14} />
+        <div className="inline-flex items-center justify-between gap-2 bg-[#5F6F8C] rounded-xl mb-6 text-white text-xs sm:text-sm max-w-full overflow-hidden">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="flex-shrink-0 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#9333EA]">
+              <ShoppingCart size={13} />
             </span>
-            <span>
-              <strong>“Obaalu – The Iron Law”</strong> Chapter 3 now live!
+            <span className="truncate pr-1">
+              <strong>"Obaalu – The Iron Law"</strong>{" "}
+              <span className="hidden xs:inline">Chapter 3 now live!</span>
             </span>
           </div>
-
-          {/* Right: Read Now */}
-          <button className="flex items-center gap-1 px-3 py-1 h-10 bg-[#9333EA] text-white rounded-xl font-semibold hover:bg-purple-800 transition">
+          <button className="flex-shrink-0 flex items-center gap-1 px-2.5 sm:px-3 py-1 h-9 sm:h-10 bg-[#9333EA] text-white rounded-xl font-semibold hover:bg-purple-800 transition whitespace-nowrap">
             Read now
-            <ArrowRight size={14} />
+            <ArrowRight size={13} />
           </button>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
-          Enter the Origin of Worlds— Where Every
-          <br />
-          Story Becomes Eternal.
+        {/* Heading */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+          Your World Has Been Waiting Long Enough.
         </h1>
 
-        {/* Subheading */}
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto">
-          Create, discover, and rule the realms of imagination. Read comics, fund creators, and compete for glory.
+        {/* Sub */}
+        <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto px-2">
+          Build your universe. Forge your character identity. Fund your vision. Share your stories worldwide. Grow your fandom.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
+        {/* CTA */}
+        <div className="flex flex-row items-center justify-center ">
+          {/* <Link
             to="/feed"
-            className="inline-block px-8 py-3 text-base font-semibold text-white bg-[#9333EA] rounded-full hover:from-purple-500 hover:to-pink-500 transition shadow-lg shadow-purple-500/50"
+            className="w-full sm:w-auto inline-block px-8 py-3 text-base font-semibold text-white bg-[#9333EA] rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/50 text-center"
           >
             Start Reading
-          </Link>
-          <Link 
+          </Link> */}
+          <Link
             to="/onboarding"
-            className="px-8 py-3 text-base font-bold  text-black bg-white border-white/20 rounded-full hover:bg-white/20 transition">
-            Become a Creator
+            className="w-full sm:w-auto px-8 py-3 text-base font-bold text-black bg-white border-white/20 rounded-full hover:bg-white/90 transition text-center"
+          >
+            Start Building and exploring worlds
           </Link>
         </div>
       </div>
