@@ -25,7 +25,7 @@ const CompleteScreen: React.FC = () => (
         Your realm awaits. Dive into stories, discover creators, and make your mark across the realms of imagination.
       </p>
       <button
-        onClick={() => { window.location.href = '/feed'; }}
+        onClick={() => { window.location.href = '/profile'; }}
         className="px-14 py-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50"
       >
         Enter the Realm
