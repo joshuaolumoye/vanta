@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Check, X } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 interface StoryTypeStepProps {
   onNext: (selected: string) => void;
@@ -60,7 +60,7 @@ const storyTypes = [
 const FAN_ANGLES = [-14, 0, 14];
 
 // ── Component ────────────────────────────────────────────────────────────────
-const StoryTypeStep: React.FC<StoryTypeStepProps> = ({ onNext, onBack, onSkip, onClose }) => {
+const StoryTypeStep: React.FC<StoryTypeStepProps> = ({ onNext, onBack, onClose }) => {
   const [selected, setSelected] = useState('');
 
   return (
