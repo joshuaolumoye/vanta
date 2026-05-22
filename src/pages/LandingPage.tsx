@@ -1,4 +1,4 @@
-import RegionHeader from "../components/ui/RegionHeader";
+// import RegionHeader from "../components/ui/RegionHeader";
 import Navbar from "../components/ui/Navbar";
 import HeroSection from "../components/landingScreen/HeroSection";
 import BackgroundAnimation from "../components/ui/BackgroundAnimation";
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <BackgroundAnimation />
-      <RegionHeader />
+      {/* <RegionHeader /> */}
       <Navbar />
       <HeroSection />
       <ChooseRealmSection />

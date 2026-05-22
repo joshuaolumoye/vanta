@@ -1,7 +1,7 @@
 import React from "react";
 
 const calloutContent = {
-  title: "You Don't Find Your Legend Here. You Build It! The realms exist. But the stories inside them? Still unwritten. Your character hasn't shown up yet. Your kingdom hasn't fallen or risen. Come build the part only you can build.",
+  title: "You Don't Find Your Legend Here. You Build It!",
   description: `The realms exist. But the stories inside them? Still unwritten. Your character hasn't shown up yet. Your kingdom hasn't fallen or risen. Come build the part only you can build.`,
   cta: "Learn more",
 };

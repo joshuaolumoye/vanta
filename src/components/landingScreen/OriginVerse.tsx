@@ -25,7 +25,7 @@ const stories = [
   {
     id: "obaalu-embers",
     tag: "STORIES FORGED IN THE ORIGIN",
-    category: "Editor’s choice",
+    category: "Editor's choice",
     title: "Obaalu — Embers That Shape Worlds",
     description:
       "From molten stone and relentless fire, legends are forged. Obaalu tells the story of creation through sacrifice, fury, and rebirth.",
@@ -89,10 +89,10 @@ const OriginVerse: React.FC = () => {
     <section className="relative w-full bg-[#111827] py-24">
       <div className="max-w-7xl mx-auto px-6 mb-14 text-center">
         <h2 className="text-3xl text-start font-bold text-white mb-4">
-          Your universe await, fueled by imagination, <br /> Built by you!!! 
+          Your universe awaits, fueled by imagination, built by you!!! 
         </h2>
         <p className="max-w-2xl text-start text-white text-sm">
-          Step beyond the pages and into a living universe shaped by its storytellers.From epic comics to character chronicles, every creation adds a new chapter to the expanding VantaOrigin realm.Connect, collaborate, and rise among legends — your journey begins here.
+          Step beyond the pages and into a living universe shaped by its storytellers. From epic comics to character chronicles, every creation adds a new chapter to the expanding VantaOrigin realm. Connect, collaborate, and rise among legends — your journey begins here.
         </p>
       </div>
 

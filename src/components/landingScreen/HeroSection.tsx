@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
 
         {/* Heading */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-          Your World Has Been Waiting Long Enough.
+          Your World Has Been Waiting Long Enough
         </h1>
 
         {/* Sub */}
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
             to="/onboarding"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold text-black bg-white border-white/20 rounded-full hover:bg-white/90 transition text-center"
           >
-            Start Building and exploring worlds
+            Start Building and Exploring Worlds
             <svg
               width="16"
               height="16"
