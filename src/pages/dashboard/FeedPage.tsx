@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../../components/ui/FeedNavbar";
 import FeedSubNav from "../../components/feed/FeedSubNav";
 import FeedHeader from "../../components/feed/FeedHeader";
-import StatsOverview from "../../components/feed/StatsOverview";
 import ForYouFeed from "../../components/feed/ForYouFeed";
 import ExploreRealms from "../../components/feed/ExploreRealms";
 import MobileFeed from "../../components/feed/MobileFeed";
